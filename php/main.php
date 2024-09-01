@@ -2,7 +2,14 @@
 
     #coneccion con base de datos#
     function conexion_bd(){
-        $pdo = new PDO('mysql:host=localhost;dbname=proyecto','root','');
+		$servername = "localhost";
+    	$username = "root";
+    	$password = "sisope";
+    	$dbname = "proyectologistico";
+        $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
         return $pdo;
     }
 
